@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Digital Diary | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Serif for titles, Sans for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">digital_diary</div>
+        <div class="nav-links">
+            <a href="#about">about</a>
+            <a href="#music">music</a>
+            <a href="#favorites">favorites</a>
+            <a href="#gallery">gallery</a>
+            <a href="#contact">contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content reveal">
+            <h1 class="title">soft <span>&</span> mysterious</h1>
+            <p class="subtitle">A collection of thoughts, sounds, and aesthetics.</p>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">about me</h2>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>I am a dreamer based in [Your City], finding beauty in the quiet moments between the espresso-stained mornings and the peony-pink sunsets.</p>
+                    <p>This space is my intimate archive—a place where my creative experiments live and breathe.</p>
+                </div>
+                <div class="polaroid-gallery reveal">
+                    <!-- ADD YOUR PHOTOS HERE -->
+                    <div class="polaroid">
+                        <img src="images/about1.jpg" alt="Me">
+                        <div class="caption">midnight thoughts</div>
+                    </div>
+                    <div class="polaroid">
+                        <img src="images/about2.jpg" alt="Me">
+                        <div class="caption">june, 2023</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">the soundtrack</h2>
+            
+            <!-- Spotify Embed -->
+            <div class="spotify-container reveal">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/YOUR_PLAYLIST_ID?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <h3 class="sub-heading reveal">my tracks</h3>
+            <div class="music-grid reveal">
+                <!-- Track 1 -->
+                <div class="music-card">
+                    <div class="cover-art">
+                        <img src="covers/track1.jpg" alt="Cover Art">
+                        <button class="play-btn" onclick="playAudio('music/song1.mp3')"><i class="fas fa-play"></i></button>
+                    </div>
+                    <div class="track-info">
+                        <h4>Midnight Echoes</h4>
+                        <p>Ambient / Lo-fi</p>
+                    </div>
+                </div>
+                <!-- Track 2 (Copy-paste this block to add more) -->
+                <div class="music-card">
+                    <div class="cover-art">
+                        <img src="covers/track2.jpg" alt="Cover Art">
+                        <button class="play-btn" onclick="playAudio('music/song2.mp3')"><i class="fas fa-play"></i></button>
+                    </div>
+                    <div class="track-info">
+                        <h4>Velvet Skies</h4>
+                        <p>Electronic</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hidden Audio Element -->
+            <audio id="global-player"></audio>
+        </div>
+    </section>
+
+    <!-- Favorites Section -->
+    <section id="favorites" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">curated favorites</h2>
+            <div class="fav-grid">
+                <div class="fav-item reveal">
+                    <h3>Artists</h3>
+                    <div class="fav-hover">Lana Del Rey, Mitski, Mazzy Star</div>
+                </div>
+                <div class="fav-item reveal">
+                    <h3>Reads</h3>
+                    <div class="fav-hover">Joan Didion, Sylvia Plath, Night Sky with Exit Wounds</div>
+                </div>
+                <div class="fav-item reveal">
+                    <h3>Aesthetics</h3>
+                    <div class="fav-hover">Coquette, Dark Academia, Soft Grunge</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">visuals</h2>
+            <div class="masonry reveal">
+                <!-- ADD YOUR IMAGES HERE -->
+                <img src="images/gallery1.jpg" alt="Gallery Image" class="zoomable">
+                <img src="images/gallery2.jpg" alt="Gallery Image" class="zoomable">
+                <img src="images/gallery3.jpg" alt="Gallery Image" class="zoomable">
+                <img src="images/gallery4.jpg" alt="Gallery Image" class="zoomable">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">stay in touch</h2>
+            <div class="socials reveal">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-soundcloud"></i></a>
+                <a href="mailto:hello@yoursite.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="credits">made with ♡ & espresso</p>
+        </div>
+    </footer>
+
+    <!-- Image Modal for Zoom -->
+    <div id="imgModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
